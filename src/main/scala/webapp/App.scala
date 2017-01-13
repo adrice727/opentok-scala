@@ -2,6 +2,7 @@ package webapp
 
 import scala.scalajs.js.JSApp
 import scala.scalajs.js.annotation.JSExport
+import org.scalajs.jquery.jQuery
 import org.scalajs.dom
 import dom.document
 
@@ -10,15 +11,12 @@ object App extends JSApp {
     println("hello there")
   }
 
-  def appendPar(targetNode: dom.Node, text: String): Unit = {
-    val parNode = document.createElement("p")
-    val textNode = document.createTextNode(text)
-    parNode.appendChild(textNode)
-    targetNode.appendChild(parNode)
+  def appendPar(message: String): Unit = {
+    jQuery("body").append(s"<p>$message</p>")
   }
 
   @JSExport
   def addClickedMessage(): Unit = {
-    appendPar(document.body, "You clicked the button!")
+    appendPar("foo bar")
   }
 }
