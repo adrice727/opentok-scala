@@ -1,22 +1,25 @@
 package webapp
 
 import scala.scalajs.js.JSApp
-import scala.scalajs.js.annotation.JSExport
+import scala.scalajs.js.Dynamic.global
 import org.scalajs.jquery.jQuery
-import org.scalajs.dom
-import dom.document
 
 object App extends JSApp {
+  val OT = global.OT
   def main(): Unit = {
-    println("hello there")
+    jQuery(setupUI _)
+  }
+
+  def setupUI(): Unit = {
+    jQuery("#click-me-button").click(addClickedMessage _)
+    jQuery("body").append("<p>Hello World</p>")
   }
 
   def appendPar(message: String): Unit = {
     jQuery("body").append(s"<p>$message</p>")
   }
 
-  @JSExport
   def addClickedMessage(): Unit = {
-    appendPar("foo bar")
+    appendPar("clicked on the thing")
   }
 }
