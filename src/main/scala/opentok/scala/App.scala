@@ -1,18 +1,18 @@
-package webapp
-
+package opentok.scala
 import scala.scalajs.js.JSApp
-import scala.scalajs.js.Dynamic.global
 import org.scalajs.jquery.jQuery
+import scala.scalajs.js.Dynamic.global
+
 
 object App extends JSApp {
-  val OT = global.OT
   def main(): Unit = {
     jQuery(setupUI _)
+
   }
 
   def setupUI(): Unit = {
-    jQuery("#click-me-button").click(addClickedMessage _)
-    jQuery("body").append("<p>Hello World</p>")
+    Opentok.init()
+//    jQuery("#click-me-button").click(Opentok.startCall())
   }
 
   def appendPar(message: String): Unit = {

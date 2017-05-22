@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <title>OpenTok Scala</title>
 </head>
-<body>
 <script src="https://static.opentok.com/v2/js/opentok.min.js"></script>
+<body>
 <!-- Include Scala.js compiled code -->
-<script type="text/javascript" src="./target/scala-2.11/opentok-scala-fastopt.js"></script>
 <script type="text/javascript" src="./target/scala-2.11/opentok-scala-jsdeps.js"></script>
+<script type="text/javascript" src="./target/scala-2.11/opentok-scala-fastopt.js"></script>
 <!-- Run webapp.App -->
 <script type="text/javascript">
-      webapp.App().main();
+      opentok.scala.App().main();
 </script>
 
-<button id="click-me-button" type="button">Click me!</button>
+<button id="click-me-button" type="button">Start Call</button>
 
 </body>
 </html>
