@@ -2,7 +2,8 @@ val circeVersion = "0.8.0"
 val circe = Seq(
   "io.circe" %% "circe-core",
   "io.circe" %% "circe-generic",
-  "io.circe" %% "circe-parser"
+  "io.circe" %% "circe-parser",
+  "io.circe" %% "circe-jawn"
 ).map(_ % circeVersion)
 
 
